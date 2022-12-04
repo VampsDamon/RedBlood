@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href='Images/Img/Illustrated Blood Donor Hospital Logo.png' type="image/png">
+    <title>Sign-Up</title>
+    <!-- <link rel="stylesheet" href="/combined.css"> -->
+    <link rel="stylesheet" href="CSS/hover.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+	<link rel="stylesheet" href="CSS/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	
+	<style>
+		.container{
+    width: 100%;
+    height: 100vh;
+    /* background-image: url(../Test/blood\ \(3\).jpg); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+	}
+    .container1{
+        margin-top: -200px;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="flex">
+		  <a href="index.html"><img id="logoimg" src="Images/Img/Illustrated Blood Donor Hospital Logo.png" alt="logo"></a>
+		  <div class="logo"> Red Blood</div>
+		  <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="index.html#about-us">About US</a></li>
+			<li>
+			  <a href="#"
+				>Looking For Blood
+				<i class="fas fa-caret-down"></i>
+			  </a>
+			  <ul>
+				<li><a href="blood _bank.ava.html">Blood Availability</a></li>
+				<li><a href="#">Blood Bank Directory</a></li>
+			  </ul>
+			</li>
+  
+			<li></li>
+			<li>
+			  <a href="#"
+				>Want to Donate Blood
+				<i class="fas fa-caret-down"></i>
+				<ul>
+				  <li><a href="donation_camp.html">Blood Donation Camp</a></li>
+				  <li><a href="Register.html">Donor Login</a></li>
+				  <li><a href="camp_registration.html">Register for VBD Camp</a></li>
+				  <li><a href="#">About Blood Donation</a></li>
+				</ul>
+			  </a>
+			</li>
+			<li>
+			  <a href="#"
+				>Blood Bank Login
+				<i class="fas fa-caret-down"></i>
+				<ul>
+				  <li><a href="#">Admin Login</a></li>
+				  <li><a href="#">Add your Blood Bank</a></li>
+				</ul>
+			  </a>
+			</li>
+		  </ul>
+	  </nav>
+      <div class="container1 wrapper">
+	
+		<div class="page-header">
+		
+			<div class="form-horizontal">
+		<form name="BBPublicPortalDonorLoginFB" method="post" action="/BLDAHIMS/bloodbank/portalDonorLogin.cnt">
+					<div class="container">
+						<br>
+					<!-- <a href="/BLDAHIMS/bloodbank/portalDonorLogin.cnt"><img src="../hisglobal/bbpublic/images/transparent/donorLogin.png" alt="Donor Login" title="" align="right"></a> -->
+						<div class="card card-container" style="padding: 20px;background: #f8f7f8;border:0px;border-radius: 15px; !important">
+						<br>
+						<h2 class="text-danger" align="left">Donor Sign-Up</h2>
+							
+							<div id="success" style="display:none;">
+								<div class="row">
+									<div class="col-sm-4"></div>
+									<h4 class="text-danger">You have been successfully registered</h4>
+								</div>
+								<div class="row">
+									<div class="col-sm-5"></div>
+									<div class="col-sm-4">
+										<button type="button" class="btn btn-danger" onclick="submitForm()">Click here to Login</button>
+									</div>
+								</div> 
+							</div><br>
+							<div id="successnew" style="display:none;">
+								<div class="row">
+									<div class="col-sm-4"></div>
+									<h4 class="text-danger">You have been successfully registered</h4>
+								</div>
+								<div class="row">
+									<div class="col-sm-5"></div>
+									<div class="col-sm-4">
+										<button type="button" class="btn btn-danger" onclick="submitForm()">Click here to Login</button>
+									</div>
+								</div> 
+							</div>
+						<div id="enterDonorId" style=""> <!-- style="background-color:#F2DEDE;" -->
+							<div class="row text-center" style="justify-content: center;padding-top: 5px;">
+								<div class="col-sm-6" style="display:none;">
+									<input id="chkidmarky" name="hasidmark" type="radio" onclick="enableBlankField()" checked="">
+									<label>Register with Health ID</label>
+								</div>
+								<div class="col-sm-12" style="display:none;">
+									<input id="chkidmarky" name="hasidmark" type="radio" onclick="enableBlankField()">
+									<label>Register as New User</label>
+								</div>
+								
+								<!-- <div class="col-sm-4">
+									<input id="chkidmarkn" disabled name="hasidmark" type="radio" onclick="enableFilledField()">
+									<label>Register with Donor Id</label>
+								</div> -->
+							</div>
+						</div>
+						
+					<div id="enterDonorIdText" style="display:none;">
+						<div class="row">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-6">
+									<label for="txtBbFName">Donor Registration No: </label><font color="red">*</font>
+									<input type="text" class="form-control" name="donorId" id="txtBbId" placeholder="ID" onkeypress="return validateNumeric(event)" maxlength="15"> 
+									<div class="row" style="display:none" id="donoridexists">
+						        			<div class="col-sm-1"></div>
+												<h4 class="text-danger">This donorId already exists</h4>
+										</div>
+									<div class="row" style="display:none" id="enterdonorid">
+						        			<div class="col-sm-1"></div>
+												<h4 class="text-danger">Please enter donor id</h4>
+										</div>
+							</div>
+						</div><br>
+					
+			<div class="row">
+						<div class="col-sm-3"></div>
+							<!-- <div class="col-sm-3">
+										<label for="selecteDob">Date of Birth: </label><font color="red">*</font> 
+										<input class="form-control" type="text" name="edonorDob" id="edatepicker" placeholder="yyy-mm-dd">
+							</div> -->
+							<div class="col-sm-9">
+									 <input type="text" id="mainCaptcha1" disabled="disabled" style="width: 58%; border-style: none; font: italic bold 30px &quot;Comic Sans MS&quot;; color: rgb(191, 34, 41);">
+									 <br>
+									 <br>
+									 <input type="text" id="txtInput1" class="form-control" placeholder="Captcha">
+									 <br>	
+									 <div align="center">
+										<div id="captchadonorValid" style="display:none;">
+											<h4 class="text-danger">Enter Valid Captcha</h4>
+										</div>
+									</div>
+									<div align="center">
+										<div id="entercaptchadonor" style="display:none;">
+											<h4 class="text-danger">Enter Captcha</h4>
+										</div>
+									</div>
+							
+							</div>
+							
+						</div>	
+						<br>
+						<div class="row">
+							<div class="col-sm-5"></div>
+							<div class="col-sm-4">
+								<button type="button" class="btn btn-danger" onclick="showDetials()" onkeypress="if(event.keyCode==13) showDetials()">Continue</button>
+							</div>
+						</div> <br>
+					</div>
+					<div id="notfound" style="display:none;">
+						<div align="center">
+							<div id="updateMobile" style="display:none;">
+								<h4 class="text-danger">Your mobile number is not present. Please update your mobile number at e-RaktKosh to proceed further</h4>
+							</div>
+						</div>
+						<div align="center">
+							<div id="notRegister" style="display:none;">
+										<h4 class="text-danger">Sorry! The donorID you mentioned is not registered with us</h4>
+									</div>
+						</div>
+						<div class="row" align="center">
+							<div class="col-md-12" align="center">
+								<button type="button" class="btn btn-danger" onclick="backTohome()">Back</button>
+							</div>
+						</div> 
+					</div>
+					
+				 <div id="modifyDonorDetails" style="display:none;">
+						
+						 <div class="row">
+							 <div class="col-md-4">
+									<label for="txtBbUserId">User ID:</label><font color="red">*</font> <input type="text" name="edonorUserId" id="txtBbUserId" placeholder="User Id" class="form-control" onkeypress="return validateAlphaNumeric(event)" maxlength="15" disabled="true">
+										<div class="row" style="display:none" id="euseridexists">
+						        			<div class="col-sm-1"></div>
+												<h4 class="text-danger">This Mobile No Already exists</h4>
+										</div>
+										<div class="row" style="display:none" id="blankeuserid">
+						        			<div class="col-sm-1"></div>
+												<h4 class="text-danger">Please enter userid</h4>
+										</div>
+								</div> 	
+							<div class="col-sm-4">
+								<label for="pass">Password</label><font color="red">*</font>
+								<input type="password" name="newePassword" maxlength="20" value="" class="form-control">
+							</div>
+						
+							<div class="col-sm-4">
+								<label for="cpass">Confirm Password</label><font color="red">*</font>
+								<input type="password" name="verifyePassword" maxlength="20" value="" class="form-control">
+							</div>
+						
+						        		<div class="row" style="display:none" id="epassChanged">
+						        			<div class="col-sm-5"></div>
+												<h4 class="text-danger">Your Password Has Been Updated.</h4>
+										</div>
+										
+										<div class="row" style="display:none" id="epassNotChange">
+											<div class="col-sm-5"></div>
+												<h4 class="text-danger">Cannot Change Passsword.</h4>
+										</div>
+										<div class="row" style="display:none" id="epassBlank">
+												<div class="col-sm-5"></div>
+												<h5 class="text-danger">Please Enter Password.</h5>
+											</div>
+											
+											<div class="row" style="display:none" id="confrimePassBlank">
+												<div class="col-sm-5"></div>
+												<h4 class="text-danger">Please Confirm Your Password</h4>
+											</div>
+								
+								<div class="row" style="display:none" id="epassNotMatch">
+												<div class="col-sm-5"></div>
+												<h4 class="text-danger">Password Do Not Match!!!</h4>
+								</div>
+								
+								
+						</div>
+						<div class="row">
+						<div class="col-sm-6">
+									<label for="txtBbFName">First Name: </label><font color="red">*</font>
+									<input type="text" name="edonorFName" maxlength="33" value="" disabled="disabled" class="form-control">
+									
+									<div align="center">
+										<div id="enterename" style="display:none;">
+											<h4 class="text-danger">Please enter your name</h4>
+										</div>
+									</div>
+						
+						</div>
+						<div class="col-sm-6">		
+									
+									<label for="txtBbLName">Last Name: </label>
+									<input type="text" name="edonorLName" maxlength="33" value="" disabled="disabled" class="form-control">
+									
+						</div>
+						
+						</div>
+						<div class="row">
+						<div class="col-md-6">
+										 <label for="selectGender">Gender: </label><font color="red">*</font> 
+										 <input type="text" name="edonorGender" value="" disabled="disabled" class="form-control">
+	
+									
+								</div>
+							<div class="col-md-6">
+										<label for="selectDob">Date of Birth: </label><font color="red">*</font> 
+									 <input type="text" name="edob" value="" disabled="disabled" class="form-control">
+ 							<!-- 	<input type="text" name="edob" id="edob" class="form-control" disabled/> -->
+									</div>
+					</div>
+					<div class="row">
+							<div class="col-sm-6">
+									<div align="center">
+										<div id="enterebgroup" style="display:none;">
+											<h4 class="text-danger">Please select your blood group</h4>
+										</div>
+									</div>
+								<label for="selectBloodABO">BloodGroup: </label> 
+								<input type="text" name="ebloodgroup" value="" disabled="disabled" class="form-control">
+	
+										
+							</div>
+							<div class="col-sm-6">		
+									<label for="txtBbMobile">Mobile No.: </label><font color="red">*</font>
+									<input type="text" name="edonorMobile" maxlength="10" value="" disabled="disabled" class="form-control">
+									<div align="center">
+										<div id="enteremobile" style="display:none;">
+											<h4 class="text-danger">Please enter your mobileNo.</h4>
+										</div>
+										
+									</div>
+							</div>
+							
+					</div>
+					<div class="row">
+								<div class="col-md-6">
+									<label for="txtBbEmail">Email: </label><font color="red">*</font> 
+									<input type="text" name="edonorEmail" maxlength="254" value="" disabled="disabled" class="form-control">
+
+								</div> 
+								
+								<div class="col-md-6">
+									<label for="txtBbEmail">Address: </label><font color="red">*</font>
+									<input type="text" name="edonorAdd" maxlength="60" value="" disabled="disabled" class="form-control">
+								</div>
+									
+					</div>
+					<div class="row">
+								 <div class="col-md-4">
+									<label for="donorAddressStateCode">State: </label>
+										<input type="text" name="edonorState" value="" disabled="disabled" class="form-control">
+	
+									
+								</div>
+							
+								<div class="col-md-4">
+									<!--  <label for="salutation">District: </label> -->
+									<label for="addressDistList">District: </label><font color="red">*</font>
+												<input type="text" name="eaddressDistList" value="" disabled="disabled" class="form-control">
+	
+									<!--  <select
+										name="eaddressDistrict" id="eaddressDistList"
+										class="form-control" disabled>
+										<option value="-1">Select District</option>
+									</select> -->
+
+								</div>
+								<div class="col-md-4">
+									<label for="txtBbPincode">PinCode: </label>
+								<input type="text" name="edonorPin" value="" onkeypress="return validateNumeric(event)" disabled="disabled" class="form-control">
+								</div>
+					</div>
+					<br><br>
+						<div class="row" align="center">
+							<div class="col-md-12" align="center">
+								<button type="button" class="btn btn-danger" onclick="signup()" onkeypress="if(event.keyCode==13) signup()">Sign Up</button>
+							</div>
+						</div> 
+					
+				</div> 
+				<div id="enterDonorDetails">
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Name:</label><font color="red">*</font>
+						
+							
+									<!-- <label for="txtBbFName">First Name: </label><font color="red">*</font> -->
+									<input type="text" name="donorFName" maxlength="33" value="" onkeypress="return validateAlphaOnlyWithDotAndSpace(event)" class="form-control" id="txtBbFName" placeholder="First Name">
+									<div align="center">
+										<div id="entername" style="display:none;">
+											<h4 class="text-danger">Please enter your name</h4>
+										</div>
+									</div>
+						
+							</div>
+							 <div class="col-sm-6" style="display:none;">
+								<label>Last Name</label>
+								
+								<!-- 	<label for="txtBbLName">Last Name: </label> -->
+									<input type="text" name="donorLName" maxlength="33" value="" onkeypress="return validateAlphaOnlyWithDotAndSpace(event)" class="form-control" id="txtBbLName"> 
+									
+							</div> 
+								<!-- commented by manisha -->
+							<!-- <div class="col-sm-6">
+										 <label for="selectDob">Date of Birth: </label><font color="red">*</font> 
+										<input class="form-control" type="text" name="dob" id="datepicker" placeholder="dd-mm-yyyy" onkeydown="return false">
+										<div align="center">
+										<div id="enterdob" style="display:none;">
+											<h4 class="text-danger">Please enter your dob</h4>
+										</div>
+									</div>
+							</div> -->
+							
+							<div class="col-sm-6">
+										 <label for="selectDob">Age: </label><font color="red">*</font> 
+										<!-- <input class="form-control" type="text" name="dob" id="datepicker" placeholder="dd-mm-yyyy" onkeydown="return false"> -->
+										<input type="text" name="donorDob" maxlength="2" value="" onkeypress="return validateNumeric(event)" class="form-control">
+									
+										
+										<div align="center">
+										<div id="enterdob" style="display:none;">
+											<h4 class="text-danger">Please enter your age</h4>
+										</div>
+									</div>
+							</div> 
+							
+					</div>
+				 	<div class="row">
+						<!-- <div class="col-sm-6">
+										 <label for="selectDob">Date of Birth: </label><font color="red">*</font> 
+										<input class="form-control" type="text" name="dob" id="datepicker" placeholder="dd-mm-yyyy" onkeydown="return false">
+										<div align="center">
+										<div id="enterdob" style="display:none;">
+											<h4 class="text-danger">Please enter your dob</h4>
+										</div>
+									</div>
+							</div>
+							 -->
+						<div class="col-sm-6">
+						
+										 <label for="selectGender">Gender: </label><font color="red">*</font>  
+										<select name="donorGender" class="form-control"><option value="-1">Select Value</option>
+				<option value="M">Male</option>
+				<option value="F">Female</option>
+				<option value="O">Other</option></select> 
+										<div align="center">
+										<div id="entergender" style="display:none;">
+											<h4 class="text-danger">Please select your gender</h4>
+										</div>
+									</div>
+						</div>
+						<div class="col-sm-6">
+							<label>Father Name:</label><font color="red">*</font>
+						
+							
+									<!-- <label for="txtBbFName">First Name: </label><font color="red">*</font> -->
+									<input type="text" name="father" maxlength="33" value="" onkeypress="return validateAlphaOnlyWithDotAndSpace(event)" class="form-control">
+									<div align="center">
+										<div id="enterfathername" style="display:none;">
+											<h4 class="text-danger">Please enter your father name</h4>
+										</div>
+									</div>
+						
+							</div>
+						
+
+					</div>
+					
+				<div class="row">
+				<div class="col-sm-6">
+									 <label for="txtBbMobile">Mobile: </label><font color="red">*</font>   
+									<input type="text" class="form-control" name="donorMobile" id="txtBbMobile" placeholder="Mobile No." maxlength="10" onkeypress="return validateNumeric(event)">
+									<div align="center">
+										<div id="entermobile" style="display:none;">
+											<h4 class="text-danger">Please enter your mobileNo.</h4>
+										</div>
+										<div id="mobilelength" style="display:none;">
+											<h4 class="text-danger">Mobile no. should be of length 10</h4>
+										</div>
+										
+										<div id="mobileAlreadyExists" style="display:none;">
+											<h4 class="text-danger">Mobile number already exists</h4>
+										</div>
+									</div>
+							</div>
+							
+								<div class="col-sm-6">
+									 <label for="txtBbEmail">Email: </label> <!-- <font color="red">*</font> -->
+									 <input type="text" name="donorEmail" maxlength="254" value="" class="form-control" id="txtBbEmail" placeholder="Email">
+									<div align="center">
+										<div id="enteremail" style="display:none;">
+											<h4 class="text-danger">Please enter your email</h4>
+										</div>
+									</div>
+									<div align="center">
+										<div id="emaillength" style="display:none;">
+											<h4 class="text-danger">Please enter valid email</h4>
+										</div>
+									</div>
+								</div>  
+							
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<label for="donorAddressStateCode">State: </label><font color="red">*</font> 
+									<select name="donorState" onchange="loadAddressDistrictList(this.value)" class="form-control"><option value="-1">Select State</option>
+										
+											<option value="35">Andaman &amp; Nicobar Islands</option>
+<option value="28">Andhra Pradesh</option>
+<option value="12">Arunachal Pradesh</option>
+<option value="18">Assam</option>
+<option value="10">Bihar</option>
+<option value="94">Chandigarh</option>
+<option value="22">Chhattisgarh</option>
+<option value="26">Dadra &amp; Nagar Haveli</option>
+<option value="25">Daman &amp; Diu</option>
+<option value="97">Delhi</option>
+<option value="30">Goa</option>
+<option value="24">Gujarat</option>
+<option value="96">Haryana</option>
+<option value="92">Himachal Pradesh</option>
+<option value="91">Jammu and Kashmir</option>
+<option value="20">Jharkhand</option>
+<option value="29">Karnataka</option>
+<option value="32">Kerala</option>
+<option value="37">Ladakh</option>
+<option value="31">Lakshadweep</option>
+<option value="23">Madhya Pradesh</option>
+<option value="27">Maharashtra</option>
+<option value="14">Manipur</option>
+<option value="17">Meghalaya</option>
+<option value="15">Mizoram</option>
+<option value="13">Nagaland</option>
+<option value="21">Odisha</option>
+<option value="34">Puducherry</option>
+<option value="93">Punjab</option>
+<option value="98">Rajasthan</option>
+<option value="11">Sikkim</option>
+<option value="33">Tamil Nadu</option>
+<option value="36">Telangana</option>
+<option value="16">Tripura</option>
+<option value="95">Uttarakhand</option>
+<option value="99">Uttar Pradesh</option>
+<option value="19">West Bengal</option></select>
+									<div align="center">
+										<div id="enterstate" style="display:none;">
+											<h4 class="text-danger">Please select state</h4>
+										</div>
+									</div>
+								</div>
+								
+								
+								<div class="col-sm-6">
+									<!--  <label for="salutation">District: </label> -->
+									 <label for="addressDistList">District: </label><font color="red">*</font> 
+									  <select name="addressDistrict" id="addressDistList" class="form-control">
+										<option value="-1">Select District</option>
+									</select>
+									<div align="center">
+										<div id="enterdist" style="display:none;">
+											<h4 class="text-danger">Please select district</h4>
+										</div>
+									</div>
+								</div>
+								
+					</div>
+				
+
+				<!-- <br> -->
+					
+			</div>
+			<div id="nextDetails" style="">
+			<!-- <div class="row">
+						<div class="col-sm-6">
+										 <label for="selectDob">Date of Birth: </label><font color="red">*</font> 
+										<input class="form-control" type="text" name="dob" id="datepicker" placeholder="dd-mm-yyyy" onkeydown="return false">
+										<div align="center">
+										<div id="enterdob" style="display:none;">
+											<h4 class="text-danger">Please enter your dob</h4>
+										</div>
+									</div>
+							</div>
+							
+						<div class="col-sm-6">
+						
+										 <label for="txtBbPincode">PinCode: </label> <font color="red">*</font>  
+									 <input type="text"
+										class="form-control" name="pincode" id="txtBbPincode"
+										placeholder="Pin Code" maxlength="6" onkeypress="return validateNumeric(event)">
+										<div align="center">
+										<div id="enterpin" style="display:none;">
+											<h4 class="text-danger">Please enter your Pincode</h4>
+										</div>
+									</div>
+						</div>
+						<div class="col-sm-6">
+						 <label for="txtBbPincode">Captcha: </label>
+							<div class="col-sm-3" style="text-align: right;">
+						
+							 <input type="text" id="mainCaptcha" disabled="disabled" style="width: 58%;"/>
+						</div>	
+						 <label for="txtBbPincode"> </label>
+						<div class="col-sm-3">
+						 <label for="txtBbPincode"> </label>
+			             	 <input type="text" id="txtInput" class="form-control" placeholder="Captcha"/>			 		
+			          	</div> 	
+						
+							</div>
+						
+
+					</div> -->
+					<div class="row">
+					<!-- <div class="col-sm-6">
+										 <label for="selectDob">Date of Birth: </label><font color="red">*</font> 
+										<input class="form-control" type="text" name="dob" id="datepicker" placeholder="dd-mm-yyyy" onkeydown="return false">
+										<div align="center">
+										<div id="enterdob" style="display:none;">
+											<h4 class="text-danger">Please enter your dob</h4>
+										</div>
+									</div>
+							</div>
+							 -->
+							 	<div class="col-sm-6">
+							<label>Address:</label>
+						
+							
+									<!-- <label for="txtBbFName">First Name: </label><font color="red">*</font> -->
+									
+									 
+									<!--  shalini 27-10-2022 -->
+									<input type="text" name="donorAdd" maxlength="250" value="" onkeypress="return  validateAlphaNumericWithDotsOnly(event,this)" class="form-control">
+									
+									
+									<div align="center">
+										<div id="enteradd" style="display:none;">
+											<h4 class="text-danger">Please enter your address</h4>
+										</div>
+									</div>
+						
+							</div>
+						
+						<div class="col-sm-6">
+						
+										 <label for="txtBbPincode">PinCode: </label> <font color="red">*</font>  
+									 <input type="text" class="form-control" name="pincode" id="txtBbPincode" placeholder="Pin Code" maxlength="6" onkeypress="return validateNumeric(event)">
+										<div align="center">
+										<div id="enterpin" style="display:none;">
+											<h4 class="text-danger">Please enter your Pincode</h4>
+										</div>
+									</div>
+						</div>
+						
+					</div>
+					<br>
+					<div class="row">
+					<div class="col-sm-4"></div>
+
+					
+						<div class="col-sm-4" style="text-align: center;">
+						
+							
+						
+							 <input type="text" id="mainCaptcha" disabled="disabled" style="width: 58%; border-style: none; font: italic bold 30px &quot;Comic Sans MS&quot;; color: rgb(191, 34, 41);">
+						
+						
+						
+			             	 <input type="text" id="txtInput" class="form-control" placeholder="Captcha">			 		
+			          	
+						
+							</div>
+							<div class="col-sm-4"></div>
+
+					</div>
+						</div>
+						<div class="row">
+						<div class="col-sm-4" style="display: none;">
+							<label for="pass">Password</label><!-- <font color="red">*</font> -->
+							<input type="text" name="newPassword" maxlength="11" value="123456" class="form-control">
+							<div class="row">
+								<div class="row" style="display:none" id="passBlank">
+												<div class="col-sm-5"></div>
+												<h4 class="text-danger">Please Enter Password.</h4>
+											</div>
+								<div class="row" style="display:none" id="passlength">
+												<div class="col-sm-4"></div>
+												<h4 class="text-danger">Password should be of atleast 6 characters</h4>
+											</div>
+								
+						        		<!-- <div class="row" style="display:none" id="passChanged">
+						        			<div class="col-sm-5"></div>
+												<h5 class="text-danger">Your Password Has Been Updated.</h5>
+										</div>
+										<div class="row" style="display:none" id="againLogin">
+											<div class="col-sm-5"></div>
+												<i><a class="text-danger" href="/BLDAHIMS/bloodbank/portalLogin.cnt">Click Here To Login.</a></i>
+										</div> -->
+										<div class="row" style="display:none" id="passNotChange">
+											<div class="col-sm-5"></div>
+												<h4 class="text-danger">Cannot Change Passsword.</h4>
+										</div>
+							</div>
+						</div>
+						<div class="col-sm-4" style="display: none;">
+							<label for="pass">Confirm Password</label><!-- <font color="red">*</font> -->
+							<input type="text" name="verifyPassword" maxlength="11" value="123456" class="form-control">							<div class="row">
+						        		
+											<div class="row" style="display:none" id="confrimPassBlank">
+												<div class="col-sm-5"></div>
+												<h4 class="text-danger">Please Confirm Your Password</h4>
+											</div>
+								
+										<div class="row" style="display:none" id="passNotMatch">
+												
+												<h4 class="text-danger">Password Do Not Match!!!</h4>
+										</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="row">
+
+			          	<div class="col-sm-4">
+				 					<div align="center">
+										<div id="captchaValid" style="display:none;">
+											<h4 class="text-danger">Enter Valid Captcha</h4>
+										</div>
+									</div>
+									<div align="center">
+										<div id="entercaptcha" style="display:none;">
+											<h4 class="text-danger">Enter Captcha</h4>
+										</div>
+									</div>
+					
+					
+					</div>
+					</div>
+							<br>	
+				<div class="row">
+					
+					<div class="col-xs-12" align="center">
+						<button type="button" class="btn btn-danger" onclick="generateDonorOTP()" onkeypress="if(event.keyCode==13) generateDonorOTP()">Sign Up</button>
+					</div>
+							
+				</div>
+						<br> 	
+			
+				
+		
+					<div id="OTPGENERATIONWITHID" style="display:none">
+						<div class="row">
+        
+						      <div id="secondDiv">
+						       <div id="eotpdiv">
+						        <div class="row">
+								        <div class="col-sm-4"></div>
+								        <div class="col-sm-2">
+														<label for="enterotp">&nbsp;&nbsp;Enter OTP</label><font color="red">*</font>
+										</div>
+								</div>
+									
+									<div class="row">
+									 <div class="col-sm-4"></div>
+										 <div class="col-sm-4">	
+											<input type="text" name="eotp" maxlength="6" tabindex="1" value="" class="form-control">
+										</div>
+									</div>
+								
+								<div class="row" style="display:none" id="blankeOTP">
+												<div class="col-sm-5"></div>
+												<h5 class="text-danger">Please Enter OTP.</h5>
+								</div>
+								 <div class="row" style="display:none" id="invalideOTP">
+											<div class="col-sm-5"></div>
+											<h5 class="text-danger">Invalid OTP!!!</h5>
+								</div>
+								<div class="row" id="firsteOTP">
+												<h6 align="center">(OTP has been send to your Email/Mobile)</h6>
+												</div>
+								</div>
+								<div class="row"> 
+									<div class="col-sm-7"></div>
+										  <p id="hideMsgse" align="center">Your OTP will expire in <span id="mins"> 04</span> : <span id="secnds"> 59</span> seconds</p>
+							
+								</div>
+								<div class="row" style="display:none" id="OtpeResend">
+												<div class="col-sm-5"></div>
+												<h6> OTP has been RESEND</h6>
+								</div>
+								<div class="row" style="display:none" id="expiryeOTP">
+											<div class="col-sm-5"></div>
+											<h5 class="text-danger">OTP Expired !!!</h5>
+								</div>
+								<div class="row" id="resendeOTP" style="display:none">
+												<div class="col-sm-5"></div>
+												<a onclick="resendeOTP()">Resend OTP</a>
+												
+								</div><br>
+								<div class="row" id="validateeOTP">
+									<div class="col-md-4"></div>
+										<div class="col-md-4">
+											 <button style="align:center;" type="button" class="btn btn-lg btn-primary btn-block btn-danger" onclick="validateeOtp()" onkeypress="if(event.keyCode==13) validateeOtp()">Validate</button>
+								         </div>
+							    </div>
+						       	  </div>
+						       	</div>
+						       
+						      <div id="thirdDive">
+						        <div style="display:none" id="enterepass">
+						        	<div class="row">
+						        		<div class="row" style="display:none" id="epassChanged">
+						        			<div class="col-sm-5"></div>
+												<h5 class="text-danger">Your Password Has Been Updated.</h5>
+										</div>
+										
+										<div class="row" style="display:none" id="epassNotChange">
+											<div class="col-sm-5"></div>
+												<h5 class="text-danger">Cannot Change Passsword.</h5>
+										</div>
+									</div>
+						        <div id="enterNewePass">	
+						         <div class="row">	
+						         	<div class="col-sm-4"></div>
+											<div class="col-sm-4">
+												<label for="pass">Password</label><font color="red">*</font>
+											</div>
+								</div>
+								<div class="row">
+											<div class="col-sm-4"></div>
+												<div class="col-sm-4">
+												<input type="password" name="newePassword" maxlength="20" tabindex="1" value="" class="form-control">
+												</div>
+								</div>
+									
+											<div class="row" style="display:none" id="epassBlank">
+												<div class="col-sm-5"></div>
+												<h5 class="text-danger">Please Enter Password.</h5>
+											</div>
+								<br><br>
+								<div class="row">
+										<div class="col-sm-4"></div>
+											<div class="col-sm-4">
+												<label for="cpass">Confirm Password</label><font color="red">*</font>
+											</div>
+								</div>
+								<div class="row">
+										<div class="col-sm-4"></div>
+											<div class="col-sm-4">
+											<input type="password" name="verifyePassword" maxlength="20" tabindex="1" value="" class="form-control">
+											</div>
+								</div><br>
+											<div class="row" style="display:none" id="confrimePassBlank">
+												<div class="col-sm-5"></div>
+												<h5 class="text-danger">Please Confirm Your Password</h5>
+											</div>
+								
+								<div class="row" style="display:none" id="epassNotMatch">
+												<div class="col-sm-5"></div>
+												<h5 class="text-danger">Password Do Not Match!!!</h5>
+								</div>
+								<div class="row">
+								<div class="col-md-4"></div>
+										<div class="col-md-4">
+								
+									 <button type="button" class="btn btn-lg btn-primary btn-block btn-signin" onclick="changeePassword()">Change Password</button>
+						         </div>
+											
+								</div>
+								</div>
+								</div>
+									</div>
+							</div>	
+					<div id="OTPGENERATION" style="display:none">
+						<div class="row">
+        
+						      <div id="secondDiv">
+						       <div style="display:none" id="otp">
+						        <div class="row">
+								        <div class="col-sm-4"></div>
+								        <div class="col-sm-2">
+														<label for="enterotp">&nbsp;&nbsp;Enter OTP</label><font color="red">*</font>
+										</div>
+								</div>
+									
+									<div class="row">
+									 <div class="col-sm-4"></div>
+										 <div class="col-sm-4">	
+											<input type="text" name="otp" maxlength="6" tabindex="1" value="" class="form-control">
+										</div>
+									</div>
+								
+								<div class="row" style="display:none" id="blankOTP">
+												<div class="col-sm-5"></div>
+												<h5 class="text-danger">Please Enter OTP.</h5>
+								</div>
+								 <div class="row" style="display:none" id="invalidOTP">
+											<div class="col-sm-5"></div>
+											<h5 class="text-danger">Invalid OTP!!!</h5>
+								</div>
+								<div class="row" id="firstOTP">
+												<div class="col-sm-4"></div>
+												<div class="col-sm-4">
+												<h6 align="center">(OTP has been send to your Email/Mobile)</h6>
+												</div>
+								</div>
+								<div class="row"> 
+									<div class="col-sm-7"></div>
+										  <p id="hideMsgs" align="center">Your OTP will expire in <span id="min"> 04</span> : <span id="secn"> 59</span> seconds</p>
+							
+								</div>
+								<div class="row" style="display:none" id="OtpResend">
+												<div class="col-sm-5"></div>
+												<h6> OTP has been RESEND</h6>
+								</div>
+								<div class="row" style="display:none" id="expiryOTP">
+											<div class="col-sm-5"></div>
+											<h5 class="text-danger">OTP Expired !!!</h5>
+								</div>
+								<div class="row" id="resendOTP">
+												<div class="col-sm-5"></div>
+												<a onclick="reesendOTP()">Resend OTP</a>
+												
+								</div><br>
+								<div class="row" id="validateOTP">
+									<div class="col-md-4"></div>
+										<div class="col-md-4">
+											 <button style="align:center;" type="button" class="btn btn-lg btn-primary btn-block btn-danger" onclick="validateOtp()" onkeypress="if(event.keyCode==13) validateOtp()">Validate</button>
+								         </div>
+							    </div>
+						       	  </div>
+						       	</div>
+						       </div>
+						
+								</div>
+							
+										
+			</div>
+					</div></form></div><!-- <br>
+					<div class="row" align="center">
+							<div class="col-md-12" align="center">
+								<button type="button" class="btn btn-danger" onclick="login()" onkeypress="if(event.keyCode==13) login()">Login</button>
+							</div>
+						</div> -->
+					<!-- <div class="row">
+									<div class="col-sm-6"></div>
+									<div class="col-sm-4">
+										<button type="button" class="btn btn-danger" onclick="login()">Login</button>
+									</div>
+					</div>  -->
+			
+			   </div>
+			   </div>

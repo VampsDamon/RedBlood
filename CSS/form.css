@@ -1,0 +1,210 @@
+
+.container2 {
+
+    width: 40%;
+
+    height: 90%;
+    align-items: center;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+form {
+
+    background-color: white;
+
+    width: 65%;
+
+    padding-left: 60px;
+
+    padding-right: 60px;
+    padding-top: 40px;
+
+    padding-bottom: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 10px 10px 20px rgba(98, 98, 98, 0.24), -10px -10px 20px rgba(111, 110, 110, 0.322);
+
+    border-top: 10px solid #0093E9;
+
+}
+
+form img {
+
+    width: 27px;
+    margin-right: 10px;
+
+    opacity: 0.8;
+
+}
+
+form h1 {
+
+    text-align: center;
+
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+}
+
+.divconatiner {
+
+    border: 1px solid rgba(0, 0, 0, 0.645);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    margin-bottom: 30px;
+    padding: 4px 10px;
+
+}
+
+.divconatiner input {
+
+    width: 85%;
+
+    height: 99%;
+
+    padding-top: 5px;
+
+    padding-bottom: 5px;
+
+    padding: 4px 10px;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 17px;
+
+
+}
+
+.button input {
+
+    color: white;
+
+    background-color: #0093E9;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 5px;
+
+    height: 100%;
+
+    padding: 10px 0;
+
+}
+
+.button {
+
+    border: none;
+
+}
+
+
+
+
+.divsubcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 47%;
+
+    padding: 3px 0;
+
+}
+
+.divsubcontainer img {
+
+    margin-right: 0;
+
+    width: 20px;
+    padding-left: 7px;
+
+}
+
+.sub {
+
+    border: none;
+
+    display: flex;
+
+    align-items: center;
+
+    Justify-content: space-between;
+
+    padding: 0;
+}
+
+#newsLetter {
+
+    width: 20px;
+
+}
+
+#termsandconditions {
+    width: 20px;
+
+}
+
+.checkbox {
+
+    border: none;
+
+}
+
+.divconatiner select {
+    width: 100%;
+
+    padding: 10px;
+
+}
+
+.select {
+
+    padding: 0;
+    border: none;
+
+}
+
+select {
+
+    font-size: 16px;
+
+}
+
+select option {
+
+    font-size: 15px;
+
+}
+
+.gender {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+
+}
+
+.genderbox {
+
+    border: none;
+
+    margin-left: -18px;
+
+}
+
+-gender input {
+    margin-right: 3px;
+
+}
