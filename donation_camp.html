@@ -26,47 +26,39 @@
 <body>
 	<div class="container">
 		<nav class="flex">
-		  <a href="index.html"><img id="logoimg" src="Images/Img/Illustrated Blood Donor Hospital Logo.png" alt="logo"></a>
-		  <div class="logo"> Red Blood</div>
-		  <ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="index.html#about-us">About US</a></li>
-			<li>
-			  <a href="#"
-				>Looking For Blood
-				<i class="fas fa-caret-down"></i>
-			  </a>
-			  <ul>
-				<li><a href="blood _bank.ava.html">Blood Availability</a></li>
-				<li><a href="#">Blood Bank Directory</a></li>
-			  </ul>
-			</li>
-  
-			<li></li>
-			<li>
-			  <a href="#"
-				>Want to Donate Blood
-				<i class="fas fa-caret-down"></i>
-				<ul>
-				  <li><a href="donation_camp.html">Blood Donation Camp</a></li>
-				  <li><a href="Register.html">Donor Login</a></li>
-				  <li><a href="camp_registration.html">Register for VBD Camp</a></li>
-				  <li><a href="#">About Blood Donation</a></li>
-				</ul>
-			  </a>
-			</li>
-			<li>
-			  <a href="#"
-				>Blood Bank Login
-				<i class="fas fa-caret-down"></i>
-				<ul>
-				  <li><a href="#">Admin Login</a></li>
-				  <li><a href="#">Add your Blood Bank</a></li>
-				</ul>
-			  </a>
-			</li>
-		  </ul>
-	  </nav>
+      <a href="index.html"><img id="logoimg" src="Images/Img/Illustrated Blood Donor Hospital Logo.png" alt="logo"></a>
+      <div class="logo"> Red Blood</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a class="scroll" href="#about-us">About Us</a>
+        </li>
+        <li>
+          <a href="blood _bank.ava.html">Blood Availability
+            <i class="fas fa-caret-down"></i>
+          </a>
+          
+        </li>
+        <li>
+          <a href="bloodbank_register.html"
+          >Add your BloodBank
+          <i class="fas fa-caret-down"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#"
+          >Want to Donate Blood
+          <i class="fas fa-caret-down"></i>
+          <ul>
+            <li><a href="donation_camp.html">Blood Donation Camp</a></li>
+            <li><a href="Register.html">Donor Login</a></li>
+            <li><a href="camp_registration.html">Register for VBD Camp</a></li>
+            <!-- <li><a href="About_Blood_Donation.html">About Blood Donation</a></li> -->
+          </ul>
+        </a>
+      </li>
+      </ul>
+  </nav>
       <div class="container1 wrapper">
         <div class="page-header">
           <h3 class="text-danger">Camp Schedule</h3>
@@ -98,15 +90,22 @@
         
         </div>			 
         
-        <div class="col-md-2 ">
-        <!--  <label for="salutation">District: </label> -->
-        <select id="distList" class="form-control" onchange="setDistrictCode(this.value)">
-        <option value="-1">All District</option>
-        <option value="679">Alluri Sitharama Raju</option><option value="680">Anakapalli</option><option value="553">Anantapur</option><option value="753">Annamayya</option><option value="750">Bapatla</option><option value="554">Chittoor</option><option value="545">East Godavari</option><option value="748">Eluru</option><option value="548">Guntur</option><option value="681">Kakinada</option><option value="682">Konaseema</option><option value="547">Krishna</option><option value="552">Kurnool</option><option value="755">Nandyal</option><option value="749">NTR</option><option value="751">Palnadu</option><option value="743">Parvathipuram Manyam</option><option value="549">Prakasam</option><option value="542">Srikakulam</option><option value="550">Sri Potti Sriramulu Nellore</option><option value="754">Sri Sathya Sai</option><option value="752">Tirupati</option><option value="544">Visakhapatnam</option><option value="543">Vizianagaram</option><option value="546">West Godavari</option><option value="551">Y.S.R.</option></select>
-        </div>
+        <div class="col-sm-3">
+          <input type="text" name="hospCity" maxlength="40" tabindex="1" value=""
+          onkeypress="return validateAlphaOnly(event,this)" class="form-control"
+          fdprocessedid="ine1y">
+
+      </div>
         <div class="col-md-3">
         <!-- <input type="text" class="form-control" id="txtBbname" placeholder="Blood Bank or Hospital Name"> -->
-        <input type="date" id="bBDate" name="" required="" min="2022-12-3">
+        <div class="col-sm-3">
+          <input type="date" name="hospCity" maxlength="40" tabindex="1" value=""
+          onkeypress="return validateAlphaOnly(event,this)" class="form-control"
+          fdprocessedid="ine1y"  style="
+          width: 271%;
+          height: 35px;">
+
+      </div>
         
         </div>
        
