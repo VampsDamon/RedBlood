@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="CSS/form.css">
     <style>
       /*ABOUT*/
-
+*{
+  scroll-behavior: smooth;
+}
 .about {
   width: 80%;
   margin: auto;
@@ -142,21 +144,21 @@ main {
   <body>
     <div class="container">
       <nav class="flex">
-        <a href="index.html"><img id="logoimg" src="Images/Img/Illustrated Blood Donor Hospital Logo.png" alt="logo"></a>
+        <a href="index.php"><img id="logoimg" src="Images/Img/Illustrated Blood Donor Hospital Logo.png" alt="logo"></a>
         <div class="logo"> Red Blood</div>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li>
             <a class="scroll" href="#about-us">About Us</a>
           </li>
           <li>
-            <a href="blood _bank.ava.html">Blood Availability
+            <a href="register.php">Blood Availability
               <i class="fas fa-caret-down"></i>
             </a>
             
           </li>
           <li>
-            <a href="bloodbank_register.html"
+            <a href="register.php"
             >Add your BloodBank
             <i class="fas fa-caret-down"></i>
           </a>
@@ -166,10 +168,10 @@ main {
             >Want to Donate Blood
             <i class="fas fa-caret-down"></i>
             <ul>
-              <li><a href="donation_camp.html">Blood Donation Camp</a></li>
-              <li><a href="Register.html">Donor Login</a></li>
-              <li><a href="camp_registration.html">Register for VBD Camp</a></li>
-              <!-- <li><a href="About_Blood_Donation.html">About Blood Donation</a></li> -->
+              <li><a href="register.php">Blood Donation Camp</a></li>
+              <li><a href="Register.php">Donor Login</a></li>
+              <li><a href="register.php">Register for VBD Camp</a></li>
+              <!-- <li><a href="About_Blood_Donation.php">About Blood Donation</a></li> -->
             </ul>
           </a>
         </li>
@@ -179,7 +181,17 @@ main {
       <h1> Start </h1>
       <h1>Saving Lives </h1>
       <p>Become a donor or request for blood And help save lives</p>
-      <a href="Register.html" class="hero-btn" target="_blank">Register</a>
+      <?php 
+        if(isset($_SESSION['loggedin']))
+        {
+          echo'<a href="Register.php" class="hero-btn">Log-Out</a>';
+        }
+        else{
+          echo'<a href="Register.php" class="hero-btn">Register</a>';
+        }
+
+      ?>
+      <!-- <a href="Register.php" class="hero-btn">Register</a> -->
   </div>
   </div>
   <main>

@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header("location: login.php");
+    exit;
+}
+else{
+  $loggedin = false;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,21 +39,21 @@
 <body>
 	<div class="container">
 		<nav class="flex">
-      <a href="index.html"><img id="logoimg" src="Images/Img/Illustrated Blood Donor Hospital Logo.png" alt="logo"></a>
+      <a href="index.php"><img id="logoimg" src="Images/Img/Illustrated Blood Donor Hospital Logo.png" alt="logo"></a>
       <div class="logo"> Red Blood</div>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li>
           <a class="scroll" href="#about-us">About Us</a>
         </li>
         <li>
-          <a href="blood _bank.ava.html">Blood Availability
+          <a href="blood _bank.ava.php">Blood Availability
             <i class="fas fa-caret-down"></i>
           </a>
           
         </li>
         <li>
-          <a href="bloodbank_register.html"
+          <a href="bloodbank_register.php"
           >Add your BloodBank
           <i class="fas fa-caret-down"></i>
         </a>
@@ -50,10 +63,10 @@
           >Want to Donate Blood
           <i class="fas fa-caret-down"></i>
           <ul>
-            <li><a href="donation_camp.html">Blood Donation Camp</a></li>
-            <li><a href="Register.html">Donor Login</a></li>
-            <li><a href="camp_registration.html">Register for VBD Camp</a></li>
-            <!-- <li><a href="About_Blood_Donation.html">About Blood Donation</a></li> -->
+            <li><a href="donation_camp.php">Blood Donation Camp</a></li>
+            <li><a href="Register.php">Donor Login</a></li>
+            <li><a href="camp_registration.php">Register for VBD Camp</a></li>
+            <!-- <li><a href="About_Blood_Donation.php">About Blood Donation</a></li> -->
           </ul>
         </a>
       </li>
