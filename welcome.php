@@ -187,7 +187,18 @@ main {
             <i class="fas fa-caret-down"></i>
             <ul>
               <li><a href="donation_camp.php">Blood Donation Camp</a></li>
-              <li><a href="Register.php">Donor Login</a></li>
+              <?php 
+              if(!$loggedin)
+              {
+                echo '<li><a href="logout.php">LogOut '.$_SESSION['username'].'</a></li>';
+                
+              }
+              else{
+                
+                echo '<li><a href="Register.php">Donor Login</a></li>';
+              }
+              ?>
+              
               <li><a href="camp_registration.php">Register for VBD Camp</a></li>
               <!-- <li><a href="About_Blood_Donation.php">About Blood Donation</a></li> -->
             </ul>
