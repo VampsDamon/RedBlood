@@ -1,3 +1,6 @@
+ <?php 
+ $Submit=false;
+ ?>
  <?php
 session_start();
 
@@ -692,7 +695,7 @@ if($insert){
                     <div class="panel-body">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form action="./bloodbank_register.php" method="post">
+                                <form action="./camp_registration.php" method="post">
                                 <fieldset>
                                     <legend>Blood Bank Address</legend>
                                     <div class="row">
@@ -814,7 +817,7 @@ if($insert){
 
                                                 <button type="submit" class="btn btn-danger">Save</button>
                                                 </form>
-                                                <button type="button" id="cancelButton" class="btn btn-danger" onclick="window.location.href='index.php'">Cancel</button>
+                                                <button type="button" id="cancelButton" class="btn btn-danger" onclick="window.location.href='welcome.php'">Cancel</button>
                                                 
   
                                             </div>
@@ -838,6 +841,7 @@ if($insert){
  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
       // Update the record
+
         $state = $_POST["hospState"];
         $District = $_POST["hospDistrict"];
         $email = $_POST["hospEmail"];
@@ -848,9 +852,14 @@ if($insert){
     
      // Sql query to be executed
       $sql = "INSERT INTO `bloodbank_reg` (`State`,`District`, `Blood_Group`, `Email` ,`Phone`, `Address`,`Hname`,`BBname`) VALUES ('$state', '$District', 'B+', '$email', '$Contact', 'Near JMI','$HopsNme','$name')";
-      $result = mysqli_query($conn, $sql);
+      if(1)
+      {
+          $result = mysqli_query($conn, $sql);
+          $Submit=true;
+          echo'<script>alert("Your data is Submitted")</script>';
+      }
       
-    
+
 }
 ?>
             
