@@ -695,7 +695,7 @@ if($insert){
                     <div class="panel-body">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form action="./camp_registration.php" method="post">
+                                <form action="./bloodbank_register.php" method="post">
                                 <fieldset>
                                     <legend>Blood Bank Address</legend>
                                     <div class="row">

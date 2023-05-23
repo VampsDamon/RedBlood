@@ -179,6 +179,7 @@ if (!$conn) {
 						<th scope="col">Phone</th>
 						<th scope="col">Hospital Name</th>
 						<th scope="col">Blood Bank Name</th>
+						<th scope="col">City</th>
 						
 					</tr>
 				</thead>
@@ -205,6 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <td>". $row['Phone'] . "</td>
             <td>". $row['Hname'] . "</td>
             <td>". $row['BBname'] . "</td>
+            <td>". $row['hospCity'] . "</td>
           </tr>";
         } 
           ?>
